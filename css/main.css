@@ -1,0 +1,86 @@
+body {
+  background: #eee;
+  font-family: 'Cairo', sans-serif;
+  text-align: center;
+  counter-reset: section;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
+.person {
+  transition: .2s;
+  padding: 9px 20px;
+  cursor: move;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  font-size: 18px;
+  background: #f7f5f5;
+  color: #111;
+}
+
+.person.checked {
+  color: #4caf50 !important;
+}
+
+.person i {
+  color: #111;
+}
+
+.draggable {
+  position: relative;
+  margin: auto;
+  border: 1px solid #ccc;
+  left: 24px;
+  width: 250px;
+}
+
+.draggable::before {
+  position: absolute;
+  counter-increment: section;
+  content: counter(section);
+  background-color: #333;
+  top: -1px;
+  left: -50px;
+  padding: 12px 15px;
+  color: #fff;
+  border: 1px solid #ccc;
+  border-right: none;
+  width: 18px;
+}
+
+.draggable:not(:last-of-type) {
+  border-bottom: none;
+}
+
+button {
+  border: none;
+  outline: none;
+  padding: 10px;
+  background: #232323;
+  border-radius: 8px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 15px auto;
+  transition: .2s;
+  cursor: pointer;
+}
+
+button:active {
+  transform: scale(.98);
+}
+
+button i {
+  color: #2196f3;
+  position: relative;
+  top: 1px;
+}
